@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //slice并不会影响原始数组
+        //如果只接收一个参数，则截取从该参数到结尾的项
+        //如果两个参数，截取第一个参数到第二个参数之间的项（不包括第二个参数位置的项）
+        //如果参数是负数,则加上数组长度，若第一个参数加上还为负数，则从第一个参数开始截取
+        //若第二个参数加上还为负数，则返回空数组
+        var colors=['yellow','red','blue','green','black','white'];
+        console.log(colors.slice(1));  //["red", "blue", "green", "black", "white"]
+        console.log(colors.slice(1,4));  //["red", "blue", "green"]
+
+        console.group('参数为负数的情况')
+        console.log(colors.slice(-8,-7));  // []
+        console.log(colors.slice(-8,2));  // ["yellow", "red"]
+        //等同于slice(1,4)
+        console.log(colors.slice(-5,-2));  // ["red", "blue", "green"]
+        console.groupEnd();
+
+        //并没有影响到原数组
+        console.log(colors); //["yellow", "red", "blue", "green", "black", "white"]
+    </script>
+</body>
+</html>

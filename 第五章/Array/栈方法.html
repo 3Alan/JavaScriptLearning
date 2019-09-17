@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //栈数据结构的访问规则：后进先出(LIFO(Last-In-First-Out))
+        //push完后返回的是数组的length
+        //pop返回的是移除的项
+        var colors=['yellow'];
+        console.group('push');
+        console.log(colors.push('red','blue'));  //3
+        console.log(colors);  //["yellow", "red", "blue"]
+        console.groupEnd();
+        
+        console.group('pop');
+        console.log(colors.pop());  //blue
+        console.log(colors);   //["yellow", "red"]
+        console.groupEnd();
+        
+    </script>
+</body>
+</html>

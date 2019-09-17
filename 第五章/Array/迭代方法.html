@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //所有迭代方法接受2个参数，在每一项上运行的函数和和运行该函数的作用域对象
+        //函数有三个参数：当前项的值、当前项位置、数组本身
+        //所有迭代方法都不会原改变数组
+        
+        console.group('every和some');
+        //every()只有每项都为true才返回true
+        var numbers=[1,23,4,5,3];
+        console.log(numbers.every(function(item,index,array){
+            return item>2;  
+        })); //false
+        //some()有一项为true就返回true
+        console.log(numbers.some(function(item,index,array){
+            return item>2;  
+        })); //true
+        console.groupEnd();
+
+
+        console.group('filter和map');
+        //filter():返回函数中返回值为true的项组成的数组
+        var numbers1=[1,23,4,5,3];
+        console.log(numbers1.filter(function(item,index,array){
+            return item>2;  
+        })); //[23, 4, 5, 3]
+        //map()返回每项经过函数处理后的数组
+        console.log(numbers1.map(function(item,index,array){
+            return item*2;  
+        })); //[2, 46, 8, 10, 6]
+
+        console.log(numbers1); //[1, 23, 4, 5, 3]
+        console.groupEnd();
+
+
+        //forEach()没有返回值
+        var numbers2=[1,87,23,12,4];
+        numbers2.forEach(function(item,index,array){
+            item*2;
+        });
+        console.log(numbers2);  //[1, 87, 23, 12, 4],并没有改变numbers2的值
+        
+
+    </script>
+</body>
+</html>

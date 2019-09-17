@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //UTC接收多个参数，并返回相对于的时间毫秒数
+        //(年份,基于0的月份,天,小时(0~24),分钟,秒,毫秒)、前两个参数必需
+        //如果没有给天数的参数，则默认为1，其他参数默认为0
+        //如果接收的参数不能表示日期，则返回NaN
+
+        console.log(new Date(Date.UTC(2019,8))); //Sun Sep 01 2019 08:00:00 GMT+0800 (中国标准时间)
+
+    </script>
+</body>
+</html>

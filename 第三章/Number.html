@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=0.1;
+        var b=0.2;
+        console.log(a+b);  //0.30000000000000004
+        console.log(a+b==0.3);  //false
+
+        var c=0.05;
+        var d=0.25;
+        console.log(c+d); //0.3
+        console.log(c+d==0.3); //true
+        
+        var min=Number.MIN_VALUE;  //js能表示的最小值5e-324
+        var max=Number.MAX_VALUE;  //js能表示的最大值1.7976931348623157e+308
+        console.log('maxValue:'+max);
+        console.log('minValue:'+min);
+        
+    </script>
+</body>
+</html>

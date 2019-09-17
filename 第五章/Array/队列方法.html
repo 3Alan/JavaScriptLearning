@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //队列数据结构的访问规则：先进先出(FIFO(First-In-First-Out))
+        //push完后返回的是数组的length
+        //shift返回的是移除的项
+        var colors=['yellow'];
+        console.group('push');
+        console.log(colors.push('red','blue'));  //3
+        console.log(colors);  //["yellow", "red", "blue"]
+        console.groupEnd();
+        
+        console.group('shift');
+        console.log(colors.shift());  //yellow
+        console.log(colors);   //["red", "blue"]
+        console.groupEnd();
+        
+    </script>
+</body>
+</html>

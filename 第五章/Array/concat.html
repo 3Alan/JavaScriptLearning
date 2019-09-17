@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //concat并不会影响原始数组
+        var colors=['yellow'];
+        var values=[1,2,8];
+        var arr=colors.concat(values);
+        console.log(arr);  //["yellow", 1, 2, 8]
+        console.log(colors);  //["yellow"]
+        console.log(arr.concat(3,'yes'));  //["yellow", 1, 2, 8, 3, "yes"]
+        
+        
+        
+    </script>
+</body>
+</html>

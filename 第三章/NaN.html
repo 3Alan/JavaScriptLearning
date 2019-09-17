@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //NaN和任何值都不相同，包括NaN本身
+        console.log(NaN==NaN);  //false
+
+        //isNaN()判断是否为NaN
+        //首相调用对象的valueOf(),看能否转化为数值。如果不能再调用toString(),然后才测试返回值
+        console.log(isNaN('10'));  //false(会被转换成数值10)
+        console.log(isNaN('blue')); //true
+        console.log(isNaN(true));  //false(会被转化为数值1)
+        
+    </script>
+</body>
+</html>

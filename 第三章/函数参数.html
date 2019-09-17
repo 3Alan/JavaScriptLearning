@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数的参数并不是必须的，只是提供便利
+        function arg() {
+            console.log(arguments.length); 
+        }
+        //arguments的应用场景
+        function doAdd(num1,num2) {
+            if(arguments.length===1){
+                console.log('you provide only one number');
+            }else if(arguments.length===2){
+                console.log(arguments[0]+"+"+num2+"="+(num1+num2));  //可以通过argument[0]访问到num1
+            }else if(arguments.length>2||arguments.length<1){
+                console.log("we need two numbers");
+            }
+        }
+        arg(1,"2",false);
+        doAdd(1);  //对于没有传递的参数，会被自动赋予undefined的值，就和定义了变量没有初始化一样
+        doAdd(1,4);
+        doAdd(1,3,4);
+        doAdd();
+
+
+
+        //-----------------函数不存在重载--------------------------
+        function Add(num,num1){
+            return num+1+num1;
+        }
+        function Add(num){
+            return num+20;
+        }
+        console.log(Add(10,20));  //前面的Add()会被后面的Add()给覆盖，所以返回值为30
+    </script>
+</body>
+</html>

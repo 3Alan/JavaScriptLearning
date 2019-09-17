@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //基本数据类型
+        function add(num) {
+            num++;
+            return num;
+        }
+        var count=5;
+        var result=add(5);
+        console.log(count);  //5
+        console.log(result); //6
+    
+
+        //对象
+        function setName(obj) {
+            obj.name='Alan';  //obj和person引用的是同一个对象
+        }
+        var person =new Object();
+        setName(person);
+        console.log(person.name);  //Alan
+        
+
+        function setName2(obj) {
+            obj.name='Alan';  //obj和person引用的是同一个对象
+            obj=new Object();  //当重写obj时，这时的obj就是一个局部对象了，在函数执行完后就会被销毁，所以并不会影响外部的obj
+            obj.name='Bob';
+            console.log(obj.name);  //Bob
+            
+        }
+        var person2 =new Object();
+        setName2(person2);
+        console.log(person2.name);  //Alan
+    </script>
+</body>
+</html>

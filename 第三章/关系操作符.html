@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("40"<"5");  //true-----如果两个都是字符串的话是比较相对应的字符串编码值的
+        console.log("40"<5);    //false-----如果一个操作数是数值，则另外一个操作上转换为数值，再进行数值比较
+        //这里就相当于想把"40"转化为数值的40,再把40和5进行比较
+
+        //当字符串无法转化为数值是该如何比较呢
+        console.log("a"<7);  //false
+        console.log("a">=7); //也是false
+        
+        //这里的a会被转换为NaN,而按照规定NaN与任何数进行比较时返回的都是false
+        
+        
+        
+    </script>
+</body>
+</html>

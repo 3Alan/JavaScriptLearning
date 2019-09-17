@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(num,num2) {
+            return num+num2;
+        }
+        function add(num) {
+            return num+20;
+        }
+        console.log(add(10,20));  //30
+        
+        
+        //----------------------------------------------
+
+        var addMore=function (num,num2) {
+            return num+num2;
+        }
+
+        addMore=function (num){
+            return num+200;
+        }
+        console.log(addMore(100,2));   //300
+        
+    </script>
+</body>
+</html>

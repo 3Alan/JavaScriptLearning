@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(null==undefined); //true 特殊情况 
+        console.log(null===undefined); //false
+        
+        console.log(NaN == NaN);  //false
+        console.log(false == 0);  //true----如果有一个操作数是布尔值，比较前先将其传化为数值false->0  true->1
+        console.log(6=="6");  //true----如果一个操作数是字符串，另一个是数值，则先将字符串转化为数值再进行比较
+    </script>
+</body>
+</html>

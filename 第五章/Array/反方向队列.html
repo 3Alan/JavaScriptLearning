@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //unshift在数组前端添加数据
+        //unshift返回数组长度
+        var colors=['yellow'];
+        console.group('unshift');
+        console.log(colors.unshift('red','blue'));  //3
+        console.log(colors);  //["red", "blue", "yellow"]
+        console.groupEnd();
+        
+        console.group('pop');
+        console.log(colors.pop());  //yellow
+        console.log(colors);   //["red", "blue"]
+        console.groupEnd();
+        
+    </script>
+</body>
+</html>

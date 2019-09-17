@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //对于函数声明：具有函数声明提升的过程，即可以先使用再声明
+        //对代码求值时，js引擎在第一遍会声明函数并将它们放到代码树的顶部
+        console.log(sum(10,20));   //30
+        function sum(num1,num2) {
+            return num1+num2;
+        }
+
+        //对于函数表达式，必须等到解析器执行到它所在的代码行，才会被执行
+        console.log(summ(10,90));   //summ is not a function
+        var summ=function(num1,num2){
+            return num1+num2;
+        }
+        
+        
+    </script>
+</body>
+</html>

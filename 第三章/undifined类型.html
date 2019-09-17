@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var message;
+        console.log(typeof message);  //undefined
+        
+        var message1=undefined;
+        console.log(typeof message1); //undefined
+        console.log(message1==undefined);  //true
+
+        console.log('----------------------------');
+        
+        //包含undefined值的变量和尚未定义的变量是不一样的
+        var message2;
+        console.log(typeof message2);   //undefined
+        console.log(typeof message3);   //undefined
+        console.log(message2);   //undefined
+        console.log(message3);   //报错Uncaught ReferenceError: message3 is not defined
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var lang='Java';
+        lang=lang+'Script';
+        console.log(lang);
+        
+
+        //null和undefined没有toString方法
+        // console.log(null.toString());  //Uncaught TypeError: Cannot read property 'toString' of null
+        // console.log(undefined.toString());  // Cannot read property 'toString' of undefined
+
+        //但是可以使用String()把null和undefined转化为字符串
+        console.log(String(null));  //null
+        console.log(String(undefined));  //undefined
+        
+
+        
+    </script>
+</body>
+</html>

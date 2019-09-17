@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //length既是可读的也是可写的
+        var nums=[1,2];
+        nums[3]=4;
+        console.log(nums);  //[1, 2, empty, 4]
+        console.log(nums[2]);  //undefined
+        
+
+        var persons=['Alan','Bob','Nancy'];
+        persons.length=4;
+        console.log(persons);   //["Alan", "Bob", "Nancy", empty]
+        console.log(persons[3]);  //undefined
+        persons.length=2;
+        console.log(persons);  //["Alan", "Bob"]
+
+
+        //使用length属性可以灵活的在数组末尾添加新元素
+        var colors=['red','yellow'];
+        colors[colors.length]='blue';
+        console.log(colors);  //["red", "yellow", "blue"]
+        
+    </script>
+</body>
+</html>

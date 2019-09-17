@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var result=5+'5';
+        console.log(result);  //'55'---如果有一个操作数是字符串，则将另一个操作数转换为字符串，然后将两个字符串拼接起来
+
+        var num1=5;
+        var num2=6;
+        var message="5+6="+num1+num2;
+        console.log(message);  //5+6=56---想要得到11的正确结果需要这样写：
+        //var message="5+6"+(num1+num2)
+
+
+        //----------------------------------------------------------------------
+
+        console.log('-------------------------减法------------------------------------');
+        console.log(Number(null));
+        
+        console.log(5-true); //4------Number(true)转换为了1
+        console.log(NaN-1);  //NaN
+        console.log(5-"");   //5------Number("")转换为0
+        console.log(5-"2");  //3
+        console.log(5-null); //5------Number(null)转换为0
+        
+        
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //splice可以实现删除和插入的功能，会改变原数组
+        //返回值是原始数组中删除的项
+        //参数一：删除起始位置
+        //参数二：删除项数
+        //参数三、四...插入的内容
+        var colors=['yellow','red','blue','green','black','white'];
+        console.log(colors.splice(0,2),colors);  //["yellow", "red"]  ["blue", "green", "black", "white"]
+        console.log(colors.splice(1,0,'color1','color2'),colors);  //[]  ["blue", "color1", "color2", "green", "black", "white"]
+        console.log(colors.splice(1,2,'color3','color4'),colors);  //["color1", "color2"]  ["blue", "color3", "color4", "green", "black", "white"]
+        
+    </script>
+</body>
+</html>
