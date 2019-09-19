@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //apply和call接收2个参数。1：在其中运行函数的作用域 2：参数数组
+        //用处：扩充函数的作用域
+        window.range="windowRange";
+        var my={range:"myRange"};
+        function showRange() {
+            console.log(this.range);
+        }
+
+        showRange();   //windowRange
+
+        showRange.call(this);   //windowRange
+        showRange.call(window);  //windowRange
+        showRange.call(my);  //myRange
+
+
+
+        //bind(),创建一个函数实例，其this值会被绑定到传给bind()函数的值
+        window.color="red";
+        var mycolor={color:"blue"};
+        function showColor() {
+            console.log(this.color);
+        }
+
+        var myColorObject=showColor.bind(mycolor);
+        myColorObject();  //blue
+    </script>
+</body>
+</html>

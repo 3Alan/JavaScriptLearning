@@ -20,6 +20,7 @@
 
         //由于使用了递归算法，所以该函数内部的递归与函数名factorial紧紧耦合在一起了
         //要消除这种问题，可以使用arguments.callee
+        //callee是函数内部对象arguments的一个属性，它是一个指向拥有这个arguments对象的函数指针
         function factorial1(num) {
             if(num<=1){
                 return 1;
