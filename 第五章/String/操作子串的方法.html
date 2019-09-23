@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //slice() substr() substring() 不会修改原本字符串的值
+        //都接收2个参数，起始位置(包括)，结束位置(不包括)(substring除外，返回字符个数)
+        //如果第二个参数没有给，以字符串末尾作为结束位置
+        var str = 'Hello javaScript!'
+        console.log(str.slice(2)); // llo javaScript!
+        console.log(str.substr(2)); // llo javaScript!
+        console.log(str.substring(2)); // llo javaScript!
+
+        console.log(str.slice(2,7)); // llo j
+        console.log(str.substr(2,7)); // llo jav
+        console.log(str.substring(2,7)); // llo j
+        
+    </script>
+</body>
+</html>
