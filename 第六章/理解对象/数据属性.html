@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Object.defineProperty()修改属性默认的特性
+    // 接收三个参数：1.属性所在的对象 2.属性的名字 
+    // 3.描述符对象（必须是configurable、enumerable、writable 和 value中的一个或者多个）
+    var person = {};
+    Object.defineProperty(person, "name", {
+      writable: false, // 该值不可修改，不设置的话默认为false
+      value: 'Alan'
+    });
+    console.log(person.name); // Alan
+    person.name = 'Bob';
+    console.log(person.name); // Alan
+
+    var person1 = {};
+    Object.defineProperty(person1, "name", {
+    configurable: false, // 表示能否通过 delete 删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性
+    value: 'Alan'
+    });
+    console.log(person1.name); // Alan
+    delete person.name;
+    console.log(person1.name); // Alan
+    // 而且，一旦把属性定义为不可配置的，就不能再把它变回可配置了。
+    //此时，再调用 Object.defineProperty()方法修改除 writable 之外的特性，都会导致错误
+    Object.defineProperty(person1, "name", {
+      configurable: true,
+      value: 'Alan'
+    }); // 会报错
+    
+
+  </script>
+</body>
+
+</html>
