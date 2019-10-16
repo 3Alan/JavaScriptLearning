@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 对于包含应用类型值得属性来说，它是被很多实例所共享的
+    function Person() {
+      
+    }
+    Person.prototype={
+      constructor: Person,
+      name: "Alan",
+      age: 21,
+      friends: ['Bob','Cathy'],
+      sayName: function () {
+        console.log(this.name);
+      }
+    }
+
+    var p1 = new Person();
+    var p2 = new Person();
+    p1.friends.push('Mary');
+
+    console.log(p1.friends); // ["Bob", "Cathy", "Mary"]
+    console.log(p2.friends); // ["Bob", "Cathy", "Mary"]
+    console.log(p1.friends == p2.friends); //true
+    
+
+  </script>
+</body>
+</html>
