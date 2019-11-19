@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // appendChild(要添加的节点) 向childNodes列表的末尾添加一个节点，返回新增的节点
+
+    // insertBefore(要插入的节点, 作为参照的节点) 往参照节点前面插入一个新的节点
+    // insertBefore(newNode, null) 与appendChild(newNode) 效果相同
+
+    // replaceChild(要插入的节点, 要替换的节点) 返回要替换的节点
+
+    // removeChild(要移除的节点) 返回要移除的节点
+    // 通过removeChild() 和 replaceChild() 移除的节点仍然为文档所有，只不过在文档中没有了自己的位置
+
+    // 以上的方法都必须先取得父节点（使用parentNode属性）
+
+
+
+    // cloneNode(true/false)
+    // 参数为true时，执行深复制，复制节点及其整个子节点树
+    // 参数为fasle时，执行浅复制，只复制节点本身，
+    // 复制后返回的节点副本属于文档所有，但并没有为它指定父节点。因此这个节点副本是一个“孤儿”
+  </script>
+</body>
+</html>

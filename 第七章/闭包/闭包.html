@@ -28,8 +28,8 @@
     // 这是的匿名函数的作用域链被初始化为包含createComparsionFunction函数的活动对象和全局变量对象
     // createComparsionFunction()函数在执行完毕后，其活动对象并不会被销毁，
     // 因为里面的匿名函数的作用域链中仍然在引用这个活动对象
-    // 换句话说 createComparisonFunction()函数返回后，其执行环境的作用域链会被销毁，但它的活
-    // 动对象仍然会留在内存中；直到匿名函数被销毁后，createComparisonFunction()的活动对象才会被销毁
+    // 换句话说 createComparisonFunction()函数返回后，其执行环境的作用域链会被销毁，
+    // 但它的活动对象仍然会留在内存中；直到匿名函数被销毁后，createComparisonFunction()的活动对象才会被销毁
     var result = compare({name: "Alan"}, {name: "Mary"});
     console.log(result);
 

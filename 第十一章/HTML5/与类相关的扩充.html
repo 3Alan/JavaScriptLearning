@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="class1 class2"></div>
+  <script>
+    // getElementsByClassName()接收的参数：一个或多个类名的字符串
+    // 下面例子取得所有类中包含class1 和 class2 的元素
+    var myClass = document.getElementsByClassName('class1 class2')[0];
+    console.log(myClass);
+    
+    // classList属性
+    console.log(myClass.classList); // DOMTokenList(2) ["class1", "class2", value: "class1 class2"]
+    // classList属性的几个方法
+    // add(value) 如果值已经存在，就不添加了
+    // contain(value) 是否存在给定值，存在返回true
+    // remove(value) 
+    // toggle(value) 如果存在给定值，删除它；如果不存在则添加它
+    myClass.classList.remove('class1');
+    myClass.classList.add('class3');
+    myClass.classList.toggle('class2');
+    myClass.classList.toggle('class4');
+    console.log(myClass.classList); // DOMTokenList(2) ["class3", "class4", value: "class3 class4"]
+    
+    
+  </script>
+</body>
+</html>

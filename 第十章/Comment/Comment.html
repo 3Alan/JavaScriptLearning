@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="myDiv"><!-- I have a dream --></div>
+  <script>
+    // nodeType的值为8
+    var div = document.getElementById('myDiv');
+    console.log(div.childNodes);
+    console.log(div.childNodes[0].nodeType); // 8
+    console.log(div.childNodes[0].data); // I have a dream
+    console.log(div.childNodes[0].nodeValue); // I have a dream
+    
+
+    // 创建注释节点
+    var newComment = document.createComment('new Comment');
+    div.appendChild(newComment);
+    console.log(div.childNodes);
+    
+  </script>
+</body>
+</html>

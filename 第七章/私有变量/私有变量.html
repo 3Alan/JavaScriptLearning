@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 特权方法： 有权访问私有变量和私有函数的公有方法
+    function myObject() {
+      // 私有变量
+      var privateVariable = 10;
+      // 私有函数
+      function privateFunction() {
+        return false;
+      }
+
+      // 特权方法
+      function publicFunction() {
+        privateVariable++;
+        return privateFunction();
+      }
+    }
+
+
+    function Person(name) {
+      this.getName = function () {
+        return name;
+      }
+
+      this.setName = function (value) {
+        name = value;
+      };
+    }
+
+    var person = new Person("Alan");
+    console.log(person.getName()); // Alan
+    person.setName("Bob");
+    console.log(person.getName()); // Bob
+    console.log(person.name); // undefined
+    
+  </script>
+</body>
+</html>
