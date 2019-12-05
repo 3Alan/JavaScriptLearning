@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>test<b>iterator</b></p>
+    <ul>
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+    </ul>
+  </div>
+  <script>
+    var myDiv = document.getElementById('myDiv');
+    var iterator = document.createNodeIterator(myDiv, NodeFilter.SHOW_ELEMENT, null, false);
+    var node = iterator.nextNode();
+    while(node!=null) {
+      console.log(node.tagName);
+      node = iterator.nextNode();
+    }
+    // DIV P B UL LI LI LI
+
+    // 如果只想遍历li元素，只需要添加一个过滤器就行了
+    // NodeFilter对象只有一个方法，即acceptNode()，如果应该访问给定节点，该方法返回NodeFilter.FILTER_ACCEPT
+    // 否则返回NodeFilter.FILTER_SKIP
+    // 下面输出的结果 LI LI LI
+    var filter = function (node) {
+      return node.tagName.toLowerCase() == 'li' ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+    }
+    var iterator2 = document.createNodeIterator(myDiv, NodeFilter.SHOW_ELEMENT, filter, false);
+    var node2 = iterator2.nextNode();
+    console.group('filter');
+    while(node2!=null) {
+      console.log(node2.tagName);
+      node2 = iterator2.nextNode();
+    }
+    console.groupEnd();
+  </script>
+</body>
+</html>

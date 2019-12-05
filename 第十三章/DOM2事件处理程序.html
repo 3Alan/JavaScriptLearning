@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="myBtn">Click</button>
+  <script>
+    // addEventListener(参数1，参数2，参数3)
+    // 参数1：要处理的事件名
+    // 参数2：事件处理程序的函数
+    // 参数3：布尔值：（true:捕获阶段调用事件处理程序/false：冒泡阶段调用事件处理程序）
+    // 与 DOM0 级方法一样，这里添加的事件处理程序也是在其依附的元素的作用域
+    // 中运行。使用 DOM2 级方法添加事件处理程序的主要好处是可以添加多个事件处理程序
+    // 下面例子的2个事件处理程序会按照他们添加的顺序去触发
+    var myBtn = document.querySelector('#myBtn');
+    myBtn.addEventListener('click',function () {
+      console.log('addEventListener!');
+    },false);
+    myBtn.addEventListener('click',function () {
+      console.log(this.id);
+    },false);
+    var handler  = function () {
+      console.log('handler function');
+    }
+    function good() {
+      console.log('good function');
+    }
+    myBtn.addEventListener('click',good,false);
+    myBtn.addEventListener('click',handler,false);
+
+
+    // 通过addEventListener()添加的事件处理程序只能通过removeEventListener()来移除
+    // 移除时传入的参数与添加时使用相同的参数，也就是说addEventListener()添加的匿名函数不能移除
+    myBtn.removeEventListener('click',function () {
+      console.log(this.id);
+    },false);
+    myBtn.removeEventListener('click',good,false);
+    myBtn.removeEventListener('click',handler,false);
+
+
+
+  </script>
+</body>
+</html>
