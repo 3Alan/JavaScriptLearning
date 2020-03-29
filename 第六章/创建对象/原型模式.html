@@ -26,7 +26,7 @@
     // 对于person1就是先在person1上搜索有没有sayName,没有的话再到原型对象上查找，发现是有sayName的，于是就读取保存在原型对象中的函数
     person1.sayName();
     var person2=new Person();
-    console.log(person1.sayName==person2.sayName);
+    console.log(person1.sayName==person2.sayName); // true
 
     // 注意：不能通过对象实例去重写原型中的值
     person1.name='Bob';
