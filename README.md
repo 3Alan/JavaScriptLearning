@@ -1,2 +1,2 @@
 # JavaScriptLearning
-JavaScript高级程序设计第三版学习
+JavaScript高级程序设计第三版学习笔记
