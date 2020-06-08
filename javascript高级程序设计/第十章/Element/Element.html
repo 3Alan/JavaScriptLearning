@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="myDiv" class="myDivClass" title="divTitle" lang="en" dir="ltr" data_divInfo="666"></div>
+  <script>
+    // 在HTML中，标签名始终以大写表示
+    var div = document.getElementById('myDiv');
+    console.log(div.tagName); // DIV
+    console.log(div.nodeName); // DIV
+    console.log(div.tagName == div.nodeName); // true
+
+
+    console.log(div.id); // myDiv
+    console.log(div.className); // myDivClass
+    console.log(div.title); // divTitle
+    console.log(div.lang); // en
+    console.log(div.dir); // ltr
+    // 上面这些属性还可以赋新值
+    div.id = 'myNewId';
+    console.log(div.id);
+    console.log(div.data_divInfo); // undefined
+
+
+
+    div.setAttribute('id','idSetBysetAttribute');
+    
+
+    console.group('获取特性');
+    console.log(div.getAttribute('id'));
+    console.log(div.getAttribute('Id')); // 特性名是不区分大小的
+    console.log(div.getAttribute('class')); // 注意这里使用的是class而不是className
+    console.log(div.getAttribute('title'));
+    console.log(div.getAttribute('lang'));
+    console.log(div.getAttribute('dir'));
+    console.log(div.getAttribute('data_divInfo'));
+    console.groupEnd();
+    
+    // removeAttribute() 用于彻底删除元素的特性
+    div.removeAttribute('dir');
+    console.log(div.getAttribute('dir')); // null
+    
+  </script>
+</body>
+</html>

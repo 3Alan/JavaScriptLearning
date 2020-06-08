@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="myDiv">
+    <ul>
+      <li>123</li>
+      <li>2142</li>
+      <li>3213</li>
+    </ul>
+  </div>
+  <script>
+    // innerText 在读取值得时候，会把子文档树中的所有文本拼接起来。
+    // 在写入值的时候，会删除元素中的所有子节点，插入包含响应文本值得文本节点
+    var myDiv = document.getElementById('myDiv');
+    console.log(myDiv.innerText);
+    // 123
+    // 2142
+    // 3213
+    
+    // 设置innerText属性的同时，也对文本中存在的 HTML 语法字符（小于号、大于号、引号及和号）进行了编码
+    // myDiv.innerText = "Hello World";
+    myDiv.innerText = myDiv.innerText;
+  </script>
+</body>
+</html>

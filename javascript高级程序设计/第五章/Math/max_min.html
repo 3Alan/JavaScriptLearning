@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var arr=[1,238,12,3,4];
+    console.log(Math.max(1,238,12,3,4)); // 238
+    // 扩展运算符得到同样的结果
+    console.log(Math.max(...arr)); // 238
+    // 也可以使用apply(参数一：在其中运行函数的作用域, 参数二：参数数组)
+    console.log(Math.max.apply(Math, arr)); // 238
+    
+    console.log(Math.min(...arr)); // 1
+    
+  </script>
+</body>
+
+</html>

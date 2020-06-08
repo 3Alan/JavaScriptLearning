@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Element节点的nodeType的值为1 -->
+  <ul id="myUl">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <ul id="myUl1"><li>1</li><li>2</li><li>3</li></ul>
+  <script>
+    var ul = document.getElementById('myUl');
+    var ul1 = document.getElementById('myUl1');
+    console.log(ul.childNodes);
+    // 该节点的子节点数为7，包括ul、li之间的换行符
+    // 注意查看输出的text的data属性
+    console.log(ul.childNodes[0].data); // 是一个换行符，这种差异不同的浏览器可能不同
+    // 对于这种情况，可以通过子节点的nodeType属性来识别
+    console.log(ul.childNodes[0].nodeType); // 3
+    console.log(ul.childNodes[1].nodeType); // 1
+    // nodeType为1的表示元素节点
+    
+
+
+    console.log(ul1.childNodes); //这种情况下子节点的数目为3
+    
+    // children
+    console.log(ul.children); // 节点数为3
+    
+  </script>
+</body>
+</html>

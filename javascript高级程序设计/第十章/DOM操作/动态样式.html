@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="myDiv">外部样式</div>
+  <div class="myDiv2">嵌入式样式</div>
+  <script>
+    // 动态外部样式
+    function loadCss(url) {
+      var link = document.createElement('link');
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = url;
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(link);
+    }
+    loadCss('./test.css');
+
+
+    // 动态嵌入式样式
+    function loadCssString(code) {
+      var style = document.createElement('style');
+      style.type = "text/css"
+      try {
+        style.appendChild(document.createTextNode(code));
+      } catch (error) {
+        style.stylesheet.cssText = code;
+      }
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(style);
+    }
+    loadCssString(".myDiv2{width:100px;height:100px;background:green;color:#fff}");
+  </script>
+</body>
+</html>

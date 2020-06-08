@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #myMenu{
+      visibility: hidden;
+      background: silver;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div id="myDiv">
+    Click Me
+  </div>
+  <ul id="myMenu">
+    <li><a href="http://www.baidu.com">百度</a></li>
+    <li><a href="http://www.google.com">google</a></li>
+    <li><a href="http://www.bing.com">必应</a></li>
+  </ul>
+  <script>
+    window.onload = function () {
+      var myDiv = document.getElementById('myDiv');
+      myDiv.addEventListener('contextmenu',function (e) {
+        e.preventDefault(); // 防止触发默认的右击事件
+        var myMenu = document.getElementById('myMenu');
+        myMenu.style.left = `${e.clientX}px`;
+        myMenu.style.top = `${e.clientY}px`;
+        myMenu.style.visibility = 'visible';
+      },false);
+      document.addEventListener('click',function () {
+        document.getElementById('myMenu').style.visibility = 'hidden';
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 匿名函数的执行环境具有全局性，因此其this对象通常指向window。
+    // 但有时由于编写闭包的方式不同，这一点可能不会那么明显
+    var name = "The Window";
+    
+    var object = {
+      name : "My Object",
+      getNameFunc: function() {
+        return function() {
+          return this.name;
+        }
+      }
+    }
+    console.log(object.getNameFunc()()); // The Window
+
+    // 可以把object的this对象保存在一个闭包能够访问到的变量里
+    var object = {
+      name : "My Object",
+      getNameFunc: function() {
+        var that = this;
+        return function() {
+          return that.name;
+        }
+      }
+    }
+    console.log(object.getNameFunc()()); // My Object
+    
+
+    
+  </script>
+</body>
+</html>

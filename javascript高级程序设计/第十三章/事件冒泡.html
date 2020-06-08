@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #container{
+      width: 300px;
+      height: 300px;
+      display: flex;
+      background: rgb(248, 216, 216);
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    #outer{
+      width: 200px;
+      height: 200px;
+      display: flex;
+      background: rgb(219, 250, 219);
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    #inner{
+      width: 100px;
+      height: 100px;
+      background: rgb(218, 218, 248);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    #container:hover{
+      opacity: 0.9;
+    }
+    #outer:hover{
+      opacity: 0.7;
+    }
+    #inner:hover{
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="outer">
+      <div id="inner">Click Me</div>
+    </div>
+  </div>
+  <script>
+    var container = document.getElementById('container');
+    var outer = document.getElementById('outer');
+    var inner = document.getElementById('inner');
+    inner.addEventListener('click',function (e) {
+      console.group('inner');
+      console.log(e.currentTarget);
+      console.log(e.target);
+      console.log('inner clicked');
+      console.groupEnd();
+      e.stopPropagation();
+    },false);
+    outer.addEventListener('click',function (e) {
+      console.group('outer');
+      console.log(e.currentTarget);
+      console.log(e.target);
+      console.log('outer clicked');
+      console.groupEnd();
+    },false);
+    container.addEventListener('click',function (e) {
+      console.group('container');
+      console.log(e.currentTarget);
+      console.log(e.target);
+      console.log('container clicked');
+      console.groupEnd();
+    },false);
+  </script>
+</body>
+</html>

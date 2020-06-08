@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 该方法接收2个对象参数，第一个对象是要添加和修改其属性的对象
+    // 第二个对象的属性和第一个对象中要添加或修改的属性一一对应
+    var book = {};
+    Object.defineProperties(book, {
+      _year: {
+        value: 2004
+      },
+      edition: {
+        value: 1
+      },
+      
+      year: {
+        get: function () {
+          return this._year;
+        },
+        set: function (newValue) {
+          if(newValue>2004){
+            this._year = newValue;
+            this.edition = newValue - 2004;
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

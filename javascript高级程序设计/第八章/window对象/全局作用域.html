@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 在全局作用域中声明的变量和函数都会变成window对象的属性和方法
+    var name = 'Alan';
+    function sayName() {
+      console.log(this.name);
+    }
+    console.log(window.name); // Alan
+    sayName(); // Alan
+    window.sayName(); // Alan
+    
+  </script>
+</body>
+</html>

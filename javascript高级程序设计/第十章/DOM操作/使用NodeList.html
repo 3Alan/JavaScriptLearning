@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <script>
+    // 下面这种情况会出现死循环
+    // 因为下面的divs集合是动态的，因此只要有新的div元素加入页面中，这个元素就会加入到divs集合中。所以每次循环i和divs.length都会加一
+    var divs = document.getElementsByTagName('div');
+    var i,div;
+    // for(i=0; i<divs.length; i++) {
+    //   div = document.createElement('div');
+    //   document.body.appendChild(div);
+    // }
+
+    // 解决方案
+    for(i=0, len=divs.length; i<len; i++) {
+      div = document.createElement('div');
+      document.body.appendChild(div);
+    }
+  </script>
+</body>
+</html>

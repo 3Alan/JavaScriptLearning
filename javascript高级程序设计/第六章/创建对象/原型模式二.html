@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // hasOwnProperty()方法可以检测一个属性是存在于实例中，还是存在于原型中
+    function Person() {
+    }
+    Person.prototype.name='Alan';
+    Person.prototype.age=21;
+    Person.prototype.sayName=function(){
+      console.log(this.name);
+    }
+    var person1=new Person();
+    console.log(person1.hasOwnProperty("name")); // false
+    person1.name='Bob';
+    console.log(person1.hasOwnProperty("name")); // true
+  </script>
+</body>
+</html>

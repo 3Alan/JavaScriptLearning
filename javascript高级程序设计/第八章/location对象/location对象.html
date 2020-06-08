@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // location对象即是window对象的属性，样式document对象的属性
+    // 也就是说window.loaction和document.location引用的是同一个对象
+
+
+    // location.assign("url")的效果和下面两种效果一样
+    // window.location = url
+    // location.href = url
+    // location.replace(url) 替换当前页面，并且不会产生历史记录
+    
+    
+    
+    // location.reload()
+    // 如果不传递参数，页面会以最有效的方式重新加载，就是说页面自上次请求以来没有发生改变，页面就会从浏览器缓存中重新加载
+    // 如果要强制从服务器进行加载，参数中传递一个true就行了
+    // 位于reload()后的代码可能不会执行，这要取决于网络延迟或系统资源等因素，所以最好将reload()放在代码最后一行
+    
+  </script>
+</body>
+</html>

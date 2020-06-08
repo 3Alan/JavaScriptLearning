@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="myDiv">
+      <p>test<b>iterator</b></p>
+      <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+      </ul>
+    </div>
+    <script>
+      // 创建TreeWalker对象使用document.createTreeWalker()方法，该方法和与 document.createNodeIterator相似
+      // 但也有一些不同之处
+      // 比如filter中，除了NodeFilter.FILTER_ACCEPT 和 NodeFilter. FILTER_SKIP 之外，还可以使用 NodeFilter.FILTER_REJECT
+      // 在使用 NodeIterator 对象时，NodeFilter.FILTER_SKIP 与 NodeFilter.FILTER_REJECT 的作用相同：跳过指定的节点。
+      // 但在使TreeWalker 对象时，NodeFilter.FILTER_SKIP 会跳过相应节点继续前进到子树中的下一个节点，
+      // 而 NodeFilter.FILTER_REJECT 则会跳过相应节点及该节点的整个子树
+      // 下面这个例子不会输出任何值，因为div是遍历的根节点，所以在filter处理时发现不是li就停止遍历了
+      var myDiv = document.getElementById('myDiv');
+      var filter = function(node){ 
+        return node.tagName.toLowerCase() == "li"? 
+        NodeFilter.FILTER_ACCEPT : 
+        NodeFilter.FILTER_REJECT; 
+      };
+      var walker = document.createTreeWalker(myDiv, NodeFilter.SHOW_ELEMENT, filter, false);
+      var node = walker.nextNode();
+      while (node!=null) {
+        console.log(node.tagName);
+        node = walker.nextNode();
+      }
+    </script>
+</body>
+</html>

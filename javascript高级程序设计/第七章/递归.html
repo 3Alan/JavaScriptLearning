@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // "use strict"
+    // 先来看一个普通的递归函数(阶乘)
+    function factorial(num) {
+      if(num<=1){
+        return 1;
+      }else{
+        return factorial(num-1)*num
+      }
+    }
+    console.log(factorial(3));
+
+    // 以上这种写法可能会导致错误
+    var anotherFactorial = factorial;
+    factorial = null;
+    // console.log(anotherFactorial(4)); // factorial is not a function
+
+    // 由于把factorial设置为null,所以在anotherFactorial中递归调用到factorial时会发生错误
+    // 我们可以用下面这两种写法来解决
+
+
+    // 这种写法在严格模式下无法使用argument.callee
+    // 会报错：递归.html:34 Uncaught TypeError: 'caller', 'callee', and 'arguments' properties 
+    // may not be accessed on strict mode functions or the arguments objects for calls to them
+    function factorial1(num) {
+      if(num<=1){
+        return 1; 
+      }else{
+        return arguments.callee(num-1)*num 
+      } 
+    }
+    console.log(factorial1(3));
+    
+    var factorial2 = (function f(num) {
+      if(num<=1){
+        return 1;
+      }else{
+        return num * f(num-1)
+      }
+    });
+    console.log(factorial2(3));
+    
+    
+  </script>
+</body>
+</html>
